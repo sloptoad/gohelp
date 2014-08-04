@@ -154,6 +154,7 @@ get '/projects/:id' do
 
   @project= Project.find(params[:id])
   @youtube = @project.youtube
+  @project_creator = User.find(@project.user_id)
   @user = User.find(@project.user_id)
   @commitments = Commitment.where(project_id: @project.id)
   

@@ -18,7 +18,7 @@
 <div class="jumbotron text-center" id="jumbo">
     <% Project.all.each do |project| %>
       <div >
-        <a id="profilelinks" href='/projects/<%=project.id%>'><%= project.name %></a>
+        <a id="profilelinks" href='/projects/<%=project.id%>'><%= project.name %></a><div><%= project.start_date %></div>
       </div>
     <% end %>
 </div>

@@ -42,7 +42,7 @@
       </div>
 <% end %>
 <br>
-  <h2 style="color:#454545">My Projects</h2>
+  <h2 style="color:#454545">Projects that I created</h2>
 
   <% @user_projects.each do |project| %>
   <div class="col-md-12">
@@ -52,7 +52,7 @@
   <% end %>
   <hr>
 <br>
-  <h2 style="color:#454545">Projects I've committed to</h2>
+  <h2 style="color:#454545">Projects I am volunteering on</h2>
 
     <% @user_commitments.each do |commitment| %>
     <div class="col-md-12">
@@ -69,9 +69,10 @@
 
 
 <br>
-
+<% if current_user.id == @user.id %>
 <div class="jumbotron" align="center" id="jumbo">
   <div class="container">
+
     <form action='/users/<%= @current_user.id %>' method="post" enctype="multipart/form-data">
       <div>
         <label style="font-size:24px; font-weight: 300">Profile Picture</label>
@@ -79,10 +80,13 @@
       </div>
       <div>
         <input type="submit" class="btn btn-default" value="Upload!" />
+  
       </div>
     </form>
   </div>
 </div>
+<%end%>
+
 
 
 <% if @current_user.id != params[:id].to_i %>
