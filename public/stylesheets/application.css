@@ -1,0 +1,82 @@
+* {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  line-height: 1.8;
+}
+
+body {
+  padding-top: 50px;
+}
+
+#navwrapper {
+  width: 100%;
+  z-index: 5;
+}
+
+#chill img {
+  height: 150px;
+  width: 150px;
+  border-radius:50%;
+}
+
+.facebook img{
+  width: 30px;
+}
+
+.fa-facebook-square {
+  margin-top:13px;
+}
+
+#jumbo {
+  background-color: #6698D1;
+  color: white;
+}
+
+#jumboform {
+  background-color: #6698D1;
+}
+
+
+#joinproj {
+  background-image: url(http://extra.upmc.com/100806/images/86537853_web.jpg);
+  background-position: 50% 17%;
+  background-size: cover;
+  color: white;
+  text-shadow: 2px 2px #000000;
+}
+
+#blue {
+  color: #6698D1;
+}
+
+#about {
+  margin: 2em 10em 0em 10em;
+}
+
+#gohelplogo {
+  width: 600px;
+  height: 100%;
+}
+
+#whitejumbo {
+  background-color: white;
+}
+
+#welcome {
+  font-size: 22px;
+  color: #6698D1;
+}
+
+#upcomingproj {
+  font-size: 32px;
+  color: #6698D1;
+}
+
+#profilelinks {
+  color:white; 
+  font-size:24px;
+}
+
+#carousellink {
+  color: white;
+}

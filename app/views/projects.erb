@@ -1,0 +1,33 @@
+
+
+<br>
+
+<% if current_user %>
+<p id="welcome" align="center">Welcome <%= @current_user.first_name.capitalize %>!</p>
+<%end%>
+<br>
+
+<div class="jumbotron text-center" id="joinproj">
+  <h1>Make the world a better place and join a project!</h1>
+</div>
+
+<p align="center" id="upcomingproj">Upcoming Projects</p>
+
+<br>
+
+<div class="jumbotron text-center" id="jumbo">
+    <% Project.all.each do |project| %>
+      <div >
+        <a id="profilelinks" href='/projects/<%=project.id%>'><%= project.name %></a>
+      </div>
+    <% end %>
+</div>
+
+<div class="container">
+  <div class="panel text-center">
+    <h3><a href='/new_project'>Create your own project now!</a></h3>
+    <br>
+  </div>
+</div>
+
+

@@ -1,0 +1,50 @@
+
+<div class="container" align="center" id="blue">
+  <h1><%=@project.name %></h1>
+</div><br>
+
+
+<div class="jumbotron" id="jumbo">
+  <div class="container">
+    <div class="row">    
+      <div class="col-md-8"><br><br>
+        <div class="container">
+          <%= youtube_embed(@youtube)%><br><br>
+        </div>
+      </div>
+      
+      <div class="col-md-4">
+        <!-- <h1><%=@project.name %></h1> -->
+        <h4>Event Creator</h4><h3><%=@user.first_name%> <%=@user.last_name%></h3><br>
+        <h4>Organization Name </h4><h3><%=@user.org_name%></h3><br>
+        <h4>Date</h4> <h3><%=@project.start_date%> - <%=@project.end_date%></h3><br>
+        <h4>Location</h4> <h3><%=@project.location%></h3> <br>
+        <h4>Description</h4> <h3><%=@project.bio%> </h3><br>
+        <h4>Current Volunteers</h4> <h3><% @commitments.each do |commitment| %>
+        <% @id = commitment.user_id %>
+        <% @commited_user = User.find(@id) %></h3>
+        <a id="profilelinks" href="/users/<%= @commited_user.id %>"><%= @commited_user.first_name %> <%= @commited_user.last_name %></a>
+       <% end %>
+        <h4>Volunteers Needed</h4> <h3><% @vol_count=@project.number_of_vols - @project.commitments.count %>
+        <% if @vol_count <=0 %>
+        <%="you reached your goal! This project is a go!"%>
+        <% @vol_count==0%>
+        <%else%>
+        <%=@vol_count%></h3>
+        <%end%>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container" align="center">
+  <% if current_user %>
+  <form action="/projects/<%= @project.id %>" method="post">
+      <input type="submit" class="btn btn-lg btn-primary" value="Join this Project!">
+  </form>
+  <%end%>
+</div>
+
+<br>
+<br>
+
